@@ -1,7 +1,10 @@
-body {
-    background: lightblue;
-}
-
 h1 {
     text-transform: uppercase;
+}
+
+.blog-container {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background-color: lightblue;
 }
