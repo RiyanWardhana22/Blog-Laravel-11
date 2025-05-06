@@ -7,7 +7,7 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about', ['title' => 'About Page']);
 });
 
 Route::get('/blog', function () {
@@ -15,9 +15,5 @@ Route::get('/blog', function () {
 });
 
 Route::get('/contact', function () {
-    return view('contact', [
-        'nama' => 'Riyan Wardhana',
-        'nim' => '4233550008',
-        'email' => 'riyanwardhana2@gmail.com'
-    ]);
+    return view('contact', ['title' => 'Contact Page']);
 });
