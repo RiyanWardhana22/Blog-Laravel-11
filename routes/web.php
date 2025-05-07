@@ -14,6 +14,7 @@ Route::get('/posts', function () {
     return view('posts', ['title' => 'Blog Page', 'posts' => [
         [
             'id' => 1,
+            'slug' => 'Sang-Pemuja-Rahasia',
             'title' => 'Sang Pemuja Rahasia',
             'author' => 'Riyan Wardhana',
             'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
@@ -22,6 +23,7 @@ Route::get('/posts', function () {
         ],
         [
             'id' => 2,
+            'slug' => 'Sang-Pengagum-Rahasia',
             'title' => 'Sang Pengagum Rahasia',
             'author' => 'Riyan Wardhana',
             'content' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
@@ -31,10 +33,11 @@ Route::get('/posts', function () {
     ]]);
 });
 
-Route::get('/posts/{id}', function($id) {
+Route::get('/posts/{id}', function($slug) {
     $posts = [
         [
             'id' => 1,
+            'slug' => 'Sang-Pemuja-Rahasia',
             'title' => 'Sang Pemuja Rahasia',
             'author' => 'Riyan Wardhana',
             'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
@@ -43,6 +46,7 @@ Route::get('/posts/{id}', function($id) {
         ],
         [
             'id' => 2,
+            'slug' => 'Sang-Pengagum-Rahasia',
             'title' => 'Sang Pengagum Rahasia',
             'author' => 'Riyan Wardhana',
             'content' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
@@ -51,8 +55,8 @@ Route::get('/posts/{id}', function($id) {
         ]
         ];
 
-        $post = Arr::first($posts, function($post) use($id) {
-            return $post['id'] == $id;
+        $post = Arr::first($posts, function($post) use($slug) {
+            return $post['slug'] == $slug;
         });
         return view('post', ['title' => 'Single Post', 'post' => $post]);
 });
