@@ -6,10 +6,8 @@
     <div class="text-base text-gray-500">
       <a href="#">{{ $post ['author'] }}</a> | 6 Mei 2025
     </div>
-    <p class="my-4 font-light">{{ $post['content'] }}</p>
+    <p class="my-4 font-light">{{ Str::limit($post['content'], 150) }}</p>
     <a href="" class="font-medium text-blue-500 hover:underline">Read more &raquo;</a>
   </article>
   @endforeach
-  
-
 </x-layout>
